@@ -8,7 +8,6 @@ class Usuario {
     static constraints = {
         email blank: false
         senha blank: false
-        
     }
 
     Long id

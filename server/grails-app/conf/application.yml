@@ -1,5 +1,9 @@
 ---
+server:
+    contextPath: '/LocacoesRS'    
 grails:
+    cors:
+        enabled: true
     profile: rest-api
     codegen:
         defaultPackage: server

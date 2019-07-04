@@ -1,0 +1,35 @@
+<div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade" *ngIf="isLoadingResults">
+        <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <div class="button-row">
+        <a mat-flat-button color="primary" [routerLink]="['/locacoes']">
+            <mat-icon>list</mat-icon>
+        </a>
+    </div>
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>
+                <h4>Id Locação: {{locacao.id}}</h4>
+            </mat-card-title>
+            <mat-card-subtitle>CPF Cliente: {{locacao.cpf_cliente}}</mat-card-subtitle>
+            <mat-card-subtitle>CNPJ Locadora: {{locacao.cnpj_locadora}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <dl>
+                <dt>Dia:</dt>
+                <dd>{{locacao.dia}}</dd>
+                <dt>Hora:</dt>
+                <dd>{{locacao.hora}}</dd>
+            </dl>
+        </mat-card-content>
+        <mat-card-actions>
+            <a mat-flat-button color="primary" [routerLink]="['/locacao-edicao', locacao.id]">
+                <mat-icon>edit</mat-icon>
+            </a>
+            <a mat-flat-button color="warn" (click)="deleteLocacao(locacao.id)">
+                <mat-icon>delete</mat-icon>
+            </a>
+        </mat-card-actions>
+    </mat-card>
+</div>

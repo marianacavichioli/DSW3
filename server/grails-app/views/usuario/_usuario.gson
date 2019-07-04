@@ -1,0 +1,11 @@
+import br.ufscar.dc.dsw.Usuario
+
+model {
+	Usuario usuario
+}
+
+json{
+	id usuario.id
+	email usuario.email
+	senha usuario.senha
+}

@@ -1,31 +1,24 @@
 package server
-import br.ufscar.dc.dsw.Livro
-import br.ufscar.dc.dsw.Editora
+import br.ufscar.dc.dsw.Usuario
+import br.ufscar.dc.dsw.Cliente
+import br.ufscar.dc.dsw.Locadora
+import br.ufscar.dc.dsw.Locacao
 
 class BootStrap {
-    // def init = { servletContext ->
-    //     Editora cia = new Editora(nome: 'Companhia das Letras')
-    //     cia.save()
+    def init = { servletContext ->
+        Usuario usuario = new Usuario(email: 'teste@teste', senha: 'teste')
+        usuario.save()
 
-    //     Livro livro = new Livro (titulo: 'Ensaio sobre a Cegueira', autor: 'José Saramago',
-    //     ano: 1995, preco: 54.9, editora: cia)
-    //     livro.save()
+        Locadora locadora = new Locadora (nome: 'locadora1', cnpj: '1')
+        locadora.save()
 
-    //     Editora record = new Editora(nome: 'Record')
-    //     record.save()
+        Cliente cliente = new Cliente(nome: 'cliente1', cpf: '2')
+        cliente.save()
 
-    //     livro = new Livro (titulo: 'Cem anos de Solidão', autor: 'Gabriel Garcia Márquez',
-    //     ano: 1977, preco: 59.9, editora: record)
-    //     livro.save()
+        Locacao locacao = new Locacao(cpf_cliente: '2', cnpj_locadora: '1', dia: '11', hora: '11')
+        locacao.save()
+    }
 
-    //     Editora objetiva = new Editora(nome: 'Objetiva')
-    //     objetiva.save()
-
-    //     livro = new Livro (titulo: 'Diálogos Impossíveis', autor: 'Luis Fernando Verissimo',
-    //     ano: 2012, preco: 22.9, editora: objetiva)
-    //     livro.save()
-    // }
-
-    // def destroy = {
-    // }   
+    def destroy = {
+    }   
 }

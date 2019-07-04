@@ -1,0 +1,13 @@
+import br.ufscar.dc.dsw.Locacao
+
+model {
+	Locacao locacao
+}
+
+json{
+    id locacao.id
+	cpf_cliente locacao.cpf_cliente
+    cnpj_locadora locacao.cnpj_locadora
+    dia locacao.dia
+    hora locacao.hora
+}

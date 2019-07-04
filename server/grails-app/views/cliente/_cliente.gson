@@ -1,0 +1,10 @@
+import br.ufscar.dc.dsw.Cliente
+
+model {
+	Cliente cliente
+}
+
+json{
+	nome cliente.nome
+	cpf cliente.cpf
+}

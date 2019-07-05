@@ -5,6 +5,10 @@ model {
 }
 
 json{
+	id cliente.id
 	nome cliente.nome
 	cpf cliente.cpf
+	data_nascimento cliente.data_nascimento
+	sexo cliente.sexo
+	telefone cliente.telefone
 }

@@ -12,14 +12,14 @@
                 <input matInput placeholder="Cpf Cliente" formControlName="cpf_cliente"
                     [errorStateMatcher]="matcher">
                 <mat-error>
-                    <span *ngIf="!locacaoForm.get('cpf_cliente').valid && locacaoForm.get('cpf_cliente').touched">Por favor entre com o Título</span>
+                    <span *ngIf="!locacaoForm.get('cpf_cliente').valid && locacaoForm.get('cpf_cliente').touched">Por favor entre com o cpf</span>
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <input matInput placeholder="Cnpj Locadora" formControlName="cnpj_locadora"
                     [errorStateMatcher]="matcher">
                 <mat-error>
-                    <span *ngIf="!locacaoForm.get('cnpj_locadora').valid && locacaoForm.get('cnpj_locadora').touched">Por favor entre com o Autor</span>
+                    <span *ngIf="!locacaoForm.get('cnpj_locadora').valid && locacaoForm.get('cnpj_locadora').touched">Por favor entre com o cnpj</span>
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width">

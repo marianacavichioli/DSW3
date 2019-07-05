@@ -23,8 +23,6 @@ export class ClienteEdicaoComponent implements OnInit {
         sexo: data.sexo,
         cpf: data.cpf,
         telefone: data.telefone,
-        email: data.email,
-        senha: data.senha,
       });
       this.isLoadingResults = false;
     });
@@ -53,11 +51,10 @@ export class ClienteEdicaoComponent implements OnInit {
     this.getCliente(this.route.snapshot.params['id']);
     this.clienteForm = this.formBuilder.group({
       'nome': [null, Validators.required],
-      'data_nascimento': [null, Validators.required],
       'cpf': [null, Validators.required],
       'telefone': [null, Validators.required],
-      'email': [null, Validators.required],
-      'senha': [null, Validators.required],
+      'data_nascimento': [null, Validators.required],
+      'sexo': [null, Validators.required],
     });
   }
 

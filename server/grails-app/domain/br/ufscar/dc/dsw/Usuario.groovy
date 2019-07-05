@@ -1,6 +1,4 @@
 package br.ufscar.dc.dsw
-
-
 import grails.rest.*
 
 @Resource(uri='/usuarios', readOnly = false, formats = ['json', 'xml'])

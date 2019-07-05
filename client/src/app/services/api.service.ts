@@ -60,7 +60,7 @@ export class ApiService {
   }
 
   deleteUsuario (id): Observable<Usuario> {
-    const url = `${apiUrl}/livros/${id}`;
+    const url = `${apiUrl}/usuarios/${id}`;
     return this.http.delete<Usuario>(url, httpOptions).pipe(
       tap(_ => console.log(`deleteUsuario id=${id}`)),
       catchError(this.handleError<Usuario>('deleteUsuario'))

@@ -16,9 +16,9 @@ const routes: Routes = [
   { path: 'locacao-cadastro', component: LocacaoCadastroComponent, data: { title: 'Cadastro Locação' }},
   { path: 'locacao-edicao/:id', component: LocacaoEdicaoComponent, data: { title: 'Edição Locação' }},
   { path: 'clientes', component: ClientesComponent, data: {title: 'Lista de Clientes'}},
-  { path: 'clientes-detalhes/:id', component: ClienteDetalhesComponent, data: {title: 'Detalhes Cliente'}},
-  { path: 'clientes-cadastro', component: ClienteCadastroComponent, data: {title: 'Cadastro Cliente'}},
-  { path: 'clientes-edicao/:id', component: ClienteEdicaoComponent, data: {title: 'Edição Cliente'}},
+  { path: 'cliente-detalhes/:id', component: ClienteDetalhesComponent, data: {title: 'Detalhes Cliente'}},
+  { path: 'cliente-cadastro', component: ClienteCadastroComponent, data: {title: 'Cadastro Cliente'}},
+  { path: 'cliente-edicao/:id', component: ClienteEdicaoComponent, data: {title: 'Edição Cliente'}},
   { path: '', redirectTo: '/locacoes', pathMatch: 'full'}
 ];
   

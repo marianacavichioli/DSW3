@@ -40,18 +40,6 @@
                         <span *ngIf="!clienteForm.get('sexo').valid && clienteForm.get('sexo').touched">Por favor entre o sexo</span>
                     </mat-error>
                 </mat-form-field>
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="E-mail" formControlName="email" [errorStateMatcher]="matcher">
-                    <mat-error>
-                        <span *ngIf="!clienteForm.get('email').valid && clienteForm.get('email').touched">Por favor entre o email</span>
-                    </mat-error>
-                </mat-form-field>
-                <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Senha" formControlName="senha" [errorStateMatcher]="matcher">
-                    <mat-error>
-                        <span *ngIf="!clienteForm.get('senha').valid && clienteForm.get('senha').touched">Por favor entre a senha</span>
-                    </mat-error>
-                </mat-form-field>
                 <div class="button-row">
                     <button type="submit" [disabled]="!clienteForm.valid" mat-flat-button color="primary">
                         <mat-icon>save</mat-icon>

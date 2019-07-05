@@ -5,6 +5,8 @@ model {
 }
 
 json{
+	id locadora.id
 	nome locadora.nome
 	cnpj locadora.cnpj
+	cidade locadora.cidade
 }

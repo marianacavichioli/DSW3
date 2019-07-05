@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../services/api.service'
+import { Locadora } from '../../models/locadora';
 
 @Component({
   selector: 'app-locadoras',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LocadorasComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = ['nome','cnpj', 'cidade'];
+  locadoras: Locadora[] = [];
+  isLoadingResults = true;
+
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.api.getLocadoras().subscribe(res => {
+      this.locadoras = res;
+      console.log(this.locadoras);
+      this.isLoadingResults = false;
+    }, err => {
+      console.log(err);
+      this.isLoadingResults = false;
+    });
   }
 
 }

@@ -172,7 +172,7 @@ export class ApiService {
   }
 
   updateLocadora (id, locadora): Observable<any> {
-    const url = `${apiUrl}/clientes/${id}`;
+    const url = `${apiUrl}/locadoras/${id}`;
     return this.http.put(url, locadora, httpOptions).pipe(
       tap(_ => console.log(`updateLocadora id=${id}`)),
       catchError(this.handleError<any>('updateLocadora'))

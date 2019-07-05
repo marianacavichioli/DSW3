@@ -11,6 +11,7 @@ class Locadora{
         cidade blank: false
     }
 
+    Long id
     String nome
     String cnpj
     String cidade

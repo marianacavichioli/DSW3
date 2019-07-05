@@ -28,6 +28,9 @@ import { LocacaoEdicaoComponent } from './components/locacao-edicao/locacao-edic
 import { ClienteCadastroComponent } from './components/cliente-cadastro/cliente-cadastro.component';
 import { ClienteDetalhesComponent } from './components/cliente-detalhes/cliente-detalhes.component';
 import { ClienteEdicaoComponent } from './components/cliente-edicao/cliente-edicao.component';
+import { LocadoraCadastroComponent } from './components/locadora-cadastro/locadora-cadastro.component';
+import { LocadoraDetalhesComponent } from './components/locadora-detalhes/locadora-detalhes.component';
+import { LocadoraEdicaoComponent } from './components/locadora-edicao/locadora-edicao.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { ClienteEdicaoComponent } from './components/cliente-edicao/cliente-edic
     LocacaoEdicaoComponent,
     ClienteCadastroComponent,
     ClienteDetalhesComponent,
-    ClienteEdicaoComponent
+    ClienteEdicaoComponent,
+    LocadoraCadastroComponent,
+    LocadoraDetalhesComponent,
+    LocadoraEdicaoComponent
   ],
   imports: [
     BrowserModule,

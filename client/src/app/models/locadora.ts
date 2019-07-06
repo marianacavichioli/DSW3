@@ -1,8 +1,9 @@
 import { Usuario } from './usuario';
 
-export class Locadora {
-    id: string;
+export class Locadora extends Usuario{
     nome: string;
     cnpj: string;
     cidade: string;
+    email: string;
+    senha: string;
 }

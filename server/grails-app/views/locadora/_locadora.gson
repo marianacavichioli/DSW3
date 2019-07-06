@@ -9,4 +9,6 @@ json{
 	nome locadora.nome
 	cnpj locadora.cnpj
 	cidade locadora.cidade
+	email locadora.email
+	senha locadora.senha
 }

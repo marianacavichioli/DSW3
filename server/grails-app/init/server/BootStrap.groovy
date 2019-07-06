@@ -9,10 +9,10 @@ class BootStrap {
         Usuario usuario = new Usuario(email: 'teste@teste', senha:'teste')
         usuario.save()
 
-        Locadora locadora = new Locadora (nome: 'locadora1', cnpj: '1', cidade:'teste')
+        Locadora locadora = new Locadora (nome: 'locadora1', cnpj: '1', cidade:'teste', email: 'locadora@locadora', senha:'teste')
         locadora.save()
 
-        Cliente cliente = new Cliente(nome: 'cliente1', cpf: '2')
+        Cliente cliente = new Cliente(nome: 'cliente1', cpf: '2', email: 'cliente@cliente', senha:'teste')
         cliente.save()
 
         Locacao locacao = new Locacao(cpf_cliente: '2', cnpj_locadora:'1', dia: '11', hora: '11')

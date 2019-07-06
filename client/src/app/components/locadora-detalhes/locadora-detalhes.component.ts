@@ -10,7 +10,7 @@ import { Locadora } from 'src/app/models/locadora';
 })
 export class LocadoraDetalhesComponent implements OnInit {
 
-  locadora: Locadora = { id: '', nome: '', cnpj: '', cidade: ''};
+  locadora: Locadora = { id: '', nome: '', cnpj: '', cidade: '', email: '', senha: ''};
   isLoadingResults = true;
 
   getLocadoraDetalhes(id) {

@@ -10,7 +10,7 @@ import { Cliente } from 'src/app/models/cliente';
 })
 export class ClienteDetalhesComponent implements OnInit {
 
-  cliente: Cliente = { id: '', nome: '', data_nascimento: '', sexo: '', cpf: '', telefone: ''};
+  cliente: Cliente = { id: '', nome: '', data_nascimento: '', sexo: '', cpf: '', telefone: '', email: '', senha: ''};
   isLoadingResults = true;
 
   getClienteDetalhes(id) {

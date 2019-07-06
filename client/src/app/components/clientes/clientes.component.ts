@@ -9,7 +9,7 @@ import { Cliente } from 'src/app/models/cliente';
 })
 export class ClientesComponent implements OnInit {
 
-  displayedColumns: string[] = ['nome', 'data_nascimento', 'sexo', 'cpf', 'telefone'];
+  displayedColumns: string[] = ['nome', 'data_nascimento', 'sexo', 'cpf', 'telefone', 'email'];
   clientes: Cliente[] = [];
   isLoadingResults = true;
 

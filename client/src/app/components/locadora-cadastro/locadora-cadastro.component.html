@@ -28,6 +28,18 @@
                     <span *ngIf="!locadoraForm.get('cidade').valid && locadoraForm.get('cidade').touched">Por favor entre a cidade</span>
                 </mat-error>
             </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="E-mail" formControlName="email" [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!locadoraForm.get('email').valid && locadoraForm.get('email').touched">Por favor entre o e-mail</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Senha" formControlName="senha" [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!locadoraForm.get('senha').valid && locadoraForm.get('senha').touched">Por favor entre a senha</span>
+                </mat-error>
+            </mat-form-field>
             <div class="button-row">
                 <button type="submit" [disabled]="!locadoraForm.valid" mat-flat-button color="primary">
                     <mat-icon>save</mat-icon>

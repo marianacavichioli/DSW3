@@ -11,4 +11,6 @@ json{
 	data_nascimento cliente.data_nascimento
 	sexo cliente.sexo
 	telefone cliente.telefone
+	email cliente.email
+	senha cliente.senha
 }

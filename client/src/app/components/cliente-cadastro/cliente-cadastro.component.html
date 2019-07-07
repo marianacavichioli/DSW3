@@ -2,6 +2,11 @@
         <div class="example-loading-shade" *ngIf="isLoadingResults">
             <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
         </div>
+        <div class="button-row">
+            <a mat-flat-button color="primary" [routerLink]="['/clientes']">
+            <mat-icon>list</mat-icon>
+            </a>
+        </div>
         <mat-card class="example-card">
             <form [formGroup]="clienteForm" (ngSubmit)="onFormSubmit(clienteForm.value)">
                 <mat-form-field class="example-full-width">
@@ -12,19 +17,19 @@
                     </mat-error>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="CPF" formControlName="cpf" [errorStateMatcher]="matcher" mask="000.000.000-00">
+                    <input matInput placeholder="CPF" formControlName="cpf" [errorStateMatcher]="matcher">
                     <mat-error>
                         <span *ngIf="!clienteForm.get('cpf').valid && clienteForm.get('cpf').touched">Por favor entre o cpf do cliente</span>
                     </mat-error>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Telefone" formControlName="telefone" [errorStateMatcher]="matcher" mask="(00) 00000-0000">
+                    <input matInput placeholder="Telefone" formControlName="telefone" [errorStateMatcher]="matcher">
                     <mat-error>
                         <span *ngIf="!clienteForm.get('telefone').valid && clienteForm.get('telefone').touched">Por favor entre o telefone</span>
                     </mat-error>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Data Nascimento" formControlName="data_nascimento" [errorStateMatcher]="matcher" mask="00/00/0000">
+                    <input matInput placeholder="Data Nascimento" formControlName="data_nascimento" [errorStateMatcher]="matcher">
                     <mat-error>
                         <span *ngIf="!clienteForm.get('data_nascimento').valid && clienteForm.get('data_nascimento').touched">Por favor entre a data_nascimento</span>
                     </mat-error>
@@ -36,21 +41,20 @@
                     </mat-error>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="E-mail" formControlName="username" [errorStateMatcher]="matcher" ngModel [email]="true">
+                    <input matInput placeholder="E-mail" formControlName="username" [errorStateMatcher]="matcher">
                     <mat-error>
                         <span *ngIf="!clienteForm.get('username').valid && clienteForm.get('username').touched">Por favor entre o email</span>
                     </mat-error>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Senha" formControlName="password" [errorStateMatcher]="matcher" type="password">
+                    <input matInput placeholder="Senha" formControlName="password" [errorStateMatcher]="matcher">
                     <mat-error>
                         <span *ngIf="!clienteForm.get('password').valid && clienteForm.get('password').touched">Por favor entre a senha</span>
                     </mat-error>
                 </mat-form-field>
                 <div class="button-row">
-                    <button type="submit" [disabled]="!clienteForm.valid" mat-flat-button color="primary" >
+                    <button type="submit" [disabled]="!clienteForm.valid" mat-flat-button color="primary">
                         <mat-icon>save</mat-icon>
-                        Salvar
                     </button>
                 </div>
             </form>

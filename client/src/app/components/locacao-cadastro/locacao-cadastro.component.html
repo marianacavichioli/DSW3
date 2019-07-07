@@ -2,29 +2,34 @@
     <div class="example-loading-shade" *ngIf="isLoadingResults">
         <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
     </div>
+    <div class="button-row">
+        <a mat-flat-button color="primary" [routerLink]="['/locacoes']">
+        <mat-icon>list</mat-icon>
+        </a>
+    </div>
     <mat-card class="example-card">
         <form [formGroup]="locacaoForm" (ngSubmit)="onFormSubmit(locacaoForm.value)">
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="CPF Cliente" formControlName="cpf_cliente" [errorStateMatcher]="matcher" mask="000.000.000-00">
+                <input matInput placeholder="CPF Cliente" formControlName="cpf_cliente" [errorStateMatcher]="matcher">
                 <mat-error>
                     <span *ngIf="!locacaoForm.get('cpf_cliente').valid && locacaoForm.get('cpf_cliente').touched">Por favor entre o
                     cpf do cliente</span>
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="CNPJ Locadora" formControlName="cnpj_locadora" [errorStateMatcher]="matcher" mask="000.000.000-00">
+                <input matInput placeholder="CNPJ Locadora" formControlName="cnpj_locadora" [errorStateMatcher]="matcher">
                 <mat-error>
                     <span *ngIf="!locacaoForm.get('cnpj_locadora').valid && locacaoForm.get('cnpj_locadora').touched">Por favor entre o cnpj da locadora</span>
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="Dia" formControlName="dia" [errorStateMatcher]="matcher" mask="00/00/0000">
+                <input matInput placeholder="Dia" formControlName="dia" [errorStateMatcher]="matcher">
                 <mat-error>
                     <span *ngIf="!locacaoForm.get('dia').valid && locacaoForm.get('dia').touched">Por favor entre o dia</span>
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="Hora" formControlName="hora" [errorStateMatcher]="matcher" mask="00:00">
+                <input matInput placeholder="Hora" formControlName="hora" [errorStateMatcher]="matcher">
                 <mat-error>
                     <span *ngIf="!locacaoForm.get('hora').valid && locacaoForm.get('hora').touched">Por favor entre a hora</span>
                 </mat-error>
@@ -32,7 +37,6 @@
             <div class="button-row">
                 <button type="submit" [disabled]="!locacaoForm.valid" mat-flat-button color="primary">
                     <mat-icon>save</mat-icon>
-                    Salvar
                 </button>
             </div>
         </form>

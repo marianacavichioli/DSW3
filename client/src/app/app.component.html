@@ -5,7 +5,19 @@
 
 <img [src]="'assets/bicicleta.png'" alt="image">
 
+<ng-template [ngIf]="loggedIn">
+  <div class="logout" style="text-align:right">
+      <mat-card-actions>
+          <button mat-flat-button color="primary" style="color: white" (click)="logout()">Logout</button>
+      </mat-card-actions>
+  </div>
+</ng-template>
+
+<p></p>
+<div class="alert-box">
+  <app-alert></app-alert>
 </div>
-  <div class="container">
+<p></p>
+<div class="container">
   <router-outlet></router-outlet>
 </div>

@@ -23,8 +23,8 @@ export class ClienteEdicaoComponent implements OnInit {
         sexo: data.sexo,
         cpf: data.cpf,
         telefone: data.telefone,
-        email: data.email,
-        senha: data.senha,
+        username: data.username,
+        password: data.password,
       });
       this.isLoadingResults = false;
     });
@@ -57,8 +57,8 @@ export class ClienteEdicaoComponent implements OnInit {
       'telefone': [null, Validators.required],
       'data_nascimento': [null, Validators.required],
       'sexo': [null, Validators.required],
-      'email': [null, Validators.required],
-      'senha': [null, Validators.required],
+      'username': [null, Validators.required],
+      'password': [null, Validators.required],
     });
   }
 

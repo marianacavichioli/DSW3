@@ -21,8 +21,8 @@ export class LocadoraEdicaoComponent implements OnInit {
         nome: data.nome,
         cnpj: data.cnpj,
         cidade: data.cidade,
-        email: data.email,
-        senha: data.senha,
+        username: data.username,
+        password: data.password,
       });
       this.isLoadingResults = false;
     });
@@ -53,8 +53,8 @@ export class LocadoraEdicaoComponent implements OnInit {
       'nome': [null, Validators.required],
       'cnpj': [null, Validators.required],
       'cidade': [null, Validators.required],
-      'email': [null, Validators.required],
-      'senha': [null, Validators.required],
+      'username': [null, Validators.required],
+      'password': [null, Validators.required],
     });
   }
 

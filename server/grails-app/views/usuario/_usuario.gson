@@ -6,6 +6,6 @@ model {
 
 json{
 	id usuario.id
-	email usuario.email
-	senha usuario.senha
+	username usuario.username
+	password usuario.password
 }

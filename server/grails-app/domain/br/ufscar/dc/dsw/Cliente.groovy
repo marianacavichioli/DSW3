@@ -2,7 +2,7 @@ package br.ufscar.dc.dsw
 import grails.rest.*
 
 @Resource(uri='/clientes', readOnly = false, formats = ['json', 'xml'])
-class Cliente extends Usuario{
+class Cliente extends User{
     static constraints = {
         nome blank: false 
         cpf blank: false 

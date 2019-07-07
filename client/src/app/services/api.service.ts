@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
-import { Usuario } from '../models/usuario';
+import { User } from '../models/usuario';
 import { Cliente } from '../models/cliente';
 import { Locadora } from '../models/locadora';
 import { Locacao } from '../models/locacao';
@@ -27,27 +27,27 @@ export class ApiService {
     };
   }
 
-  getUsuarios (): Observable<Usuario[]> {
+  getUsuarios (): Observable<User[]> {
     const url = `${apiUrl}/usuarios`;
-    return this.http.get<Usuario[]>(url).pipe(
+    return this.http.get<User[]>(url).pipe(
       tap(heroes => console.log('getUsuarios')),
       catchError(this.handleError('getUsuarios', []))
     );
   }
 
-  getUsuario(id: number): Observable<Usuario> {
+  getUsuario(id: number): Observable<User> {
     const url = `${apiUrl}/usuarios/${id}`;
-    return this.http.get<Usuario>(url).pipe(
+    return this.http.get<User>(url).pipe(
       tap(_ => console.log(`getUsuario id=${id}`)),
-      catchError(this.handleError<Usuario>(`getUsuario id=${id}`))
+      catchError(this.handleError<User>(`getUsuario id=${id}`))
     );
   }
 
-  addUsuario (usuario): Observable<Usuario> {
+  addUsuario (usuario): Observable<User> {
     const url = `${apiUrl}/usuarios`;
-    return this.http.post<Usuario>(url, usuario, httpOptions).pipe(
-      tap((usuario: Usuario) => console.log(`addUsuario w/id=${usuario.id}`)),
-      catchError(this.handleError<Usuario>('addUsuario'))
+    return this.http.post<User>(url, usuario, httpOptions).pipe(
+      tap((usuario: User) => console.log(`addUsuario w/id=${usuario.id}`)),
+      catchError(this.handleError<User>('addUsuario'))
     );
   }
 
@@ -59,11 +59,11 @@ export class ApiService {
     );
   }
 
-  deleteUsuario (id): Observable<Usuario> {
+  deleteUsuario (id): Observable<User> {
     const url = `${apiUrl}/usuarios/${id}`;
-    return this.http.delete<Usuario>(url, httpOptions).pipe(
+    return this.http.delete<User>(url, httpOptions).pipe(
       tap(_ => console.log(`deleteUsuario id=${id}`)),
-      catchError(this.handleError<Usuario>('deleteUsuario'))
+      catchError(this.handleError<User>('deleteUsuario'))
     );
   }
 

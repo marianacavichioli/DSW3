@@ -30,15 +30,15 @@
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="E-mail" formControlName="email" [errorStateMatcher]="matcher">
+                <input matInput placeholder="E-mail" formControlName="username" [errorStateMatcher]="matcher">
                 <mat-error>
-                    <span *ngIf="!locadoraForm.get('email').valid && locadoraForm.get('email').touched">Por favor entre o e-mail</span>
+                    <span *ngIf="!locadoraForm.get('username').valid && locadoraForm.get('username').touched">Por favor entre o e-mail</span>
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="Senha" formControlName="senha" [errorStateMatcher]="matcher">
+                <input matInput placeholder="Senha" formControlName="password" [errorStateMatcher]="matcher">
                 <mat-error>
-                    <span *ngIf="!locadoraForm.get('senha').valid && locadoraForm.get('senha').touched">Por favor entre a senha</span>
+                    <span *ngIf="!locadoraForm.get('password').valid && locadoraForm.get('password').touched">Por favor entre a senha</span>
                 </mat-error>
             </mat-form-field>
             <div class="button-row">

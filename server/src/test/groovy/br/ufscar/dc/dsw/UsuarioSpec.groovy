@@ -3,7 +3,7 @@ package br.ufscar.dc.dsw
 import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
 
-class UsuarioSpec extends Specification implements DomainUnitTest<Usuario> {
+class UsuarioSpec extends Specification implements DomainUnitTest<User> {
 
     def setup() {
     }

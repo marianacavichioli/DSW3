@@ -9,7 +9,7 @@ import { Locadora } from '../../models/locadora';
 })
 export class LocadorasComponent implements OnInit {
 
-  displayedColumns: string[] = ['nome','cnpj', 'cidade', 'email'];
+  displayedColumns: string[] = ['nome','cnpj', 'cidade', 'username'];
   locadoras: Locadora[] = [];
   isLoadingResults = true;
 

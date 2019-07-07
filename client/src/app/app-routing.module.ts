@@ -14,6 +14,8 @@ import { LocadoraDetalhesComponent } from './components/locadora-detalhes/locado
 import { LocadoraCadastroComponent } from './components/locadora-cadastro/locadora-cadastro.component';
 import { LocadoraEdicaoComponent } from './components/locadora-edicao/locadora-edicao.component';
 
+import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './helpers/auth-guard';
 
 const routes: Routes = [
   { path: 'locacoes', component: LocacoesComponent, data: { title: 'Lista de Locações' }},
@@ -28,6 +30,7 @@ const routes: Routes = [
   { path: 'locadora-detalhes/:id', component: LocadoraDetalhesComponent, data: {title: 'Detalhes Locadora'}},
   { path: 'locadora-cadastro', component: LocadoraCadastroComponent, data: {title: 'Cadastro Locadora'}},
   { path: 'locadora-edicao/:id', component: LocadoraEdicaoComponent, data: {title: 'Edição Locadora'}},
+  { path: 'login', component: LoginComponent, data: { title: 'Login' }},
   { path: '', redirectTo: '/locadoras', pathMatch: 'full'}
 ];
   

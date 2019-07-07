@@ -13,9 +13,9 @@
                 <h4>Nome: {{locadora.nome}}</h4>
                 <h5>Id: {{locadora.id}}</h5>
             </mat-card-title>
-            <mat-card-subtitle>CNPJ: {{locadora.cnpj}}</mat-card-subtitle>
+            <mat-card-subtitle>CNPJ: {{locadora.cnpj | mask:"000.000.000-00"}}</mat-card-subtitle>
             <mat-card-subtitle>Cidade: {{locadora.cidade}}</mat-card-subtitle>
-            <mat-card-subtitle>E-mail: {{locadora.username}}</mat-card-subtitle>
+            <mat-card-subtitle>E-mail: {{locadora.username}} </mat-card-subtitle>
         </mat-card-header>
         <mat-card-actions>
             <a mat-flat-button color="primary" [routerLink]="['/locadora-edicao', locadora.id]">

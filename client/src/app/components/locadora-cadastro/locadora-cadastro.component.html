@@ -2,11 +2,6 @@
     <div class="example-loading-shade" *ngIf="isLoadingResults">
         <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
     </div>
-    <div class="button-row">
-        <a mat-flat-button color="primary" [routerLink]="['/locadoras']">
-        <mat-icon>list</mat-icon>
-        </a>
-    </div>
     <mat-card class="example-card">
         <form [formGroup]="locadoraForm" (ngSubmit)="onFormSubmit(locadoraForm.value)">
             <mat-form-field class="example-full-width">
@@ -17,7 +12,7 @@
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="CNPJ" formControlName="cnpj" [errorStateMatcher]="matcher">
+                <input matInput placeholder="CNPJ" formControlName="cnpj" [errorStateMatcher]="matcher" mask="000.000.000-00">
                 <mat-error>
                     <span *ngIf="!locadoraForm.get('cnpj').valid && locadoraForm.get('cnpj').touched">Por favor entre o cnpj da locadora</span>
                 </mat-error>
@@ -29,13 +24,13 @@
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="E-mail" formControlName="username" [errorStateMatcher]="matcher">
+                <input matInput placeholder="E-mail" formControlName="username" [errorStateMatcher]="matcher" ngModel [email]="true">
                 <mat-error>
                     <span *ngIf="!locadoraForm.get('username').valid && locadoraForm.get('username').touched">Por favor entre o e-mail</span>
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="Senha" formControlName="password" [errorStateMatcher]="matcher">
+                <input matInput placeholder="Senha" formControlName="password" [errorStateMatcher]="matcher" type="password">
                 <mat-error>
                     <span *ngIf="!locadoraForm.get('password').valid && locadoraForm.get('password').touched">Por favor entre a senha</span>
                 </mat-error>
@@ -43,6 +38,7 @@
             <div class="button-row">
                 <button type="submit" [disabled]="!locadoraForm.valid" mat-flat-button color="primary">
                     <mat-icon>save</mat-icon>
+                    Salvar
                 </button>
             </div>
         </form>

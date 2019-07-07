@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JwtModule } from '@auth0/angular-jwt';
 
-import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { ClientesComponent } from './components/clientes/clientes.component';
 import { LocadorasComponent } from './components/locadoras/locadoras.component';
 import { LocacoesComponent } from './components/locacoes/locacoes.component';
@@ -22,7 +21,7 @@ import {
   MatIconModule,
   MatButtonModule,
   MatCardModule,
-  MatFormFieldModule } from "@angular/material";
+  MatFormFieldModule, MatToolbarModule, MatSidenavModule, MatListModule } from "@angular/material";
 
 import { LocacaoCadastroComponent } from './components/locacao-cadastro/locacao-cadastro.component';
 import { LocacaoDetalhesComponent } from './components/locacao-detalhes/locacao-detalhes.component';
@@ -35,11 +34,13 @@ import { LocadoraDetalhesComponent } from './components/locadora-detalhes/locado
 import { LocadoraEdicaoComponent } from './components/locadora-edicao/locadora-edicao.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { LoginComponent } from './components/login/login.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import {NgxMaskModule} from 'ngx-mask';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsuariosComponent,
     ClientesComponent,
     LocadorasComponent,
     LocacoesComponent,
@@ -53,7 +54,8 @@ import { LoginComponent } from './components/login/login.component';
     LocadoraDetalhesComponent,
     LocadoraEdicaoComponent,
     AlertComponent,
-    LoginComponent
+    LoginComponent,
+    MainNavComponent
   ],
   imports: [
     BrowserModule,
@@ -72,6 +74,7 @@ import { LoginComponent } from './components/login/login.component';
     MatCardModule,
     MatSelectModule,
     MatFormFieldModule,
+    NgxMaskModule.forRoot(),
     JwtModule.forRoot({
       config: {
         tokenGetter: function tokenGetter() {
@@ -81,7 +84,11 @@ import { LoginComponent } from './components/login/login.component';
         blacklistedRoutes: ['http://localhost:8080/LocacoesRS/api/login',
           'http://localhost:8080/LocacoesRS/oauth/access_token']
       }
-})
+}),
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

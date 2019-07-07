@@ -1,0 +1,71 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+      <mat-toolbar><img [src]="'assets/bicicleta2.png'" alt="image" class="center"/></mat-toolbar>
+      <mat-nav-list>
+          <ng-template [ngIf]="role == 'ROLE_CLIENTE'">
+              <a mat-list-item [routerLink]="['/locacoes']">
+                Locações
+              </a>
+              <a mat-list-item [routerLink]="['/locacao-cadastro']">
+                Nova locação
+              </a>
+          </ng-template>
+
+          <ng-template [ngIf]="role == 'ROLE_LOCADORA'">
+              <a mat-list-item [routerLink]="['/locacoes']">
+                Locações
+              </a>
+          </ng-template>
+
+          <ng-template [ngIf]="role == 'ROLE_ADMIN'">
+              <a mat-list-item [routerLink]="['/clientes']">
+                Clientes
+              </a>
+              <a mat-list-item [routerLink]="['/locadoras']">
+                Locadoras
+              </a>
+              <a mat-list-item [routerLink]="['/locacoes']">
+                Locações
+              </a>
+              <a mat-list-item [routerLink]="['/cliente-cadastro']">
+                Cadastrar cliente
+              </a>
+              <a mat-list-item [routerLink]="['/locadora-cadastro']">
+                Cadastrar locadora
+              </a>
+              <a mat-list-item [routerLink]="['/locacao-cadastro']">
+                Cadastrar locação
+              </a>
+          </ng-template>
+
+          <ng-template [ngIf]="role == null">
+              <a mat-list-item [routerLink]="['/locadoras']">
+                Locadoras
+              </a>
+              <a mat-list-item [routerLink]="['/login']">
+                Login
+              </a>
+          </ng-template>
+
+          <ng-template mat-flat-item [ngIf]="loggedIn">
+              <a mat-list-item (click)="logout()">
+                  Logout
+              </a>
+          </ng-template>
+      </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <mat-toolbar color="primary">
+          <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          </button>
+          <span>
+              <div style="text-align:center">
+                  <h1>Locações de Bicicletas</h1>
+              </div>
+          </span>
+      </mat-toolbar>
+
+      <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

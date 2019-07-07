@@ -1,23 +1,11 @@
-<div style="text-align:center">
-  <h1>
-  Locação de Bicicletas
-</h1>
+<app-main-nav>
 
-<img [src]="'assets/bicicleta.png'" alt="image">
-
-<ng-template [ngIf]="loggedIn">
-  <div class="logout" style="text-align:right">
-      <mat-card-actions>
-          <button mat-flat-button color="primary" style="color: white" (click)="logout()">Logout</button>
-      </mat-card-actions>
+  <p></p>
+  <div class="alert-box">
+    <app-alert></app-alert>
   </div>
-</ng-template>
-
-<p></p>
-<div class="alert-box">
-  <app-alert></app-alert>
-</div>
-<p></p>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+  <p></p>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</app-main-nav>

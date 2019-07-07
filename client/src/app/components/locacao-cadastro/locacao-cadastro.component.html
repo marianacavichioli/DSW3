@@ -10,18 +10,21 @@
     <mat-card class="example-card">
         <form [formGroup]="locacaoForm" (ngSubmit)="onFormSubmit(locacaoForm.value)">
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="CPF Cliente" formControlName="cpf_cliente" [errorStateMatcher]="matcher">
-                <mat-error>
-                    <span *ngIf="!locacaoForm.get('cpf_cliente').valid && locacaoForm.get('cpf_cliente').touched">Por favor entre o
-                    cpf do cliente</span>
-                </mat-error>
+                <mat-label>CPF Cliente</mat-label>
+                <mat-select formControlName="cpf_cliente">
+                    <mat-option *ngFor="let cliente of clientes" [value]="cliente.cpf">
+                        {{cliente.cpf}}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="CNPJ Locadora" formControlName="cnpj_locadora" [errorStateMatcher]="matcher">
-                <mat-error>
-                    <span *ngIf="!locacaoForm.get('cnpj_locadora').valid && locacaoForm.get('cnpj_locadora').touched">Por favor entre o cnpj da locadora</span>
-                </mat-error>
-            </mat-form-field>
+                    <mat-label>CNPJ Locadora</mat-label>
+                    <mat-select formControlName="cnpj_locadora">
+                        <mat-option *ngFor="let locadora of locadoras" [value]="locadora.cnpj">
+                            {{locadora.cnpj}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
             <mat-form-field class="example-full-width">
                 <input matInput placeholder="Dia" formControlName="dia" [errorStateMatcher]="matcher">
                 <mat-error>

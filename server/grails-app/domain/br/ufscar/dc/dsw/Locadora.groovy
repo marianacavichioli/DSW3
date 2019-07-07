@@ -7,7 +7,7 @@ import grails.rest.*
 class Locadora extends Usuario{
     static constraints = {
         nome blank: false
-        cnpj blank: false 
+        cnpj blank: false, unique: true
         cidade blank: false
     }
 

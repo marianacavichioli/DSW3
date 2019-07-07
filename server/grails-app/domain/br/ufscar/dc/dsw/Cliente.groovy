@@ -5,7 +5,7 @@ import grails.rest.*
 class Cliente extends Usuario{
     static constraints = {
         nome blank: false 
-        cpf blank: false 
+        cpf blank: false, unique: true
         data_nascimento nullable: true
         telefone nullable: true
         sexo nullable: true

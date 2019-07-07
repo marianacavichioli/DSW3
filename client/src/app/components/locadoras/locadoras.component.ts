@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
 import { ApiService } from '../../services/api.service'
 import { Locadora } from '../../models/locadora';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-locadoras',
@@ -12,18 +13,27 @@ export class LocadorasComponent implements OnInit {
   displayedColumns: string[] = ['nome','cnpj', 'cidade', 'email'];
   locadoras: Locadora[] = [];
   isLoadingResults = true;
+  public dataSource = new MatTableDataSource<Locadora>();
 
-  constructor(private api: ApiService) { }
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
-  ngOnInit() {
+  getLocadoras(){
     this.api.getLocadoras().subscribe(res => {
-      this.locadoras = res;
+      this.dataSource.data = res as Locadora[];
       console.log(this.locadoras);
       this.isLoadingResults = false;
     }, err => {
       console.log(err);
       this.isLoadingResults = false;
     });
+  }
+
+  constructor(private api: ApiService) { }
+
+  ngOnInit() {
+    this.getLocadoras();
   }
 
 }

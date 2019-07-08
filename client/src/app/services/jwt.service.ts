@@ -3,11 +3,14 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Authentication } from '../models/authentication';
 import { tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { ApiService } from '../services/api.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class JWTService {
+
+  api = new ApiService(this.httpClient);
 
   constructor(private httpClient: HttpClient) { }
   
@@ -15,6 +18,8 @@ export class JWTService {
     const url = 'http://localhost:8080/LocacoesRS/api/login';
     return this.httpClient.post<Authentication> (url, {username, password}).pipe(tap(res=> {
       res.when = new Date();
+      localStorage.setItem('username', username);
+      localStorage.setItem('role', res.roles.toString()); 
       localStorage.setItem('authentication', JSON.stringify(res));
       localStorage.setItem('access_token', res.access_token);
       localStorage.setItem('refresh_token', res.refresh_token);
@@ -22,6 +27,8 @@ export class JWTService {
   }
 
   logout() {
+    localStorage.removeItem('username');
+    localStorage.removeItem('role');
     localStorage.removeItem('authentication');
     localStorage.removeItem('access_token');
     localStorage.removeItem('refresh_token');
@@ -32,7 +39,7 @@ export class JWTService {
     const payload = new HttpParams()
       .set('grant_type', 'refresh_token')
       .set('refresh_token', token);
-    const url = 'http://localhost:8080/GrailsAngularWEBRS/oauth/access_token';
+    const url = 'http://localhost:8080/LocacoesRS/oauth/access_token';
     return this.httpClient.post<Authentication>(url,payload).pipe(
       tap(_=> console.debug('getAuthentication'))
     );
@@ -59,5 +66,13 @@ export class JWTService {
       }
     }
     return hasToken
+  }
+
+  getUsername(): String {
+    return localStorage.getItem('username')
+  }
+
+  getRole(): String {
+    return localStorage.getItem('role')
   }
 }

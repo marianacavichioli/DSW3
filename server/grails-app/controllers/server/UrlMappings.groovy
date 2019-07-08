@@ -13,5 +13,8 @@ class UrlMappings {
         "/"(controller: 'application', action:'index')
         "500"(view: '/error')
         "404"(view: '/notFound')
+        "/clientes"(resources:"cliente")
+        "/locadoras"(resources:"locadora")
+        "/locacoes"(resources:"locacao")
     }
 }

@@ -4,4 +4,4 @@ Terceiro Trabalho da Disciplina de Desenvolvimento de Software para Web
 
     Tecnologias Utilizadas: Angular e Grails
 
-    Alunos: Julia Milani, Mariana Cavichioli Silva e Rafael Bastos Sait
+    Alunos: Julia Milani, Mariana Cavichioli Silva e Rafael Bastos Saito

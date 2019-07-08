@@ -10,4 +10,16 @@ class LocadoraController extends RestfulController {
     LocadoraController() {
         super(Locadora)
     }
+
+    @Secured(['permitAll()'])
+    @Override
+    def index(Integer max) {
+        super.index(max)
+    }
+
+    @Secured(['permitAll()'])
+    @Override
+    def show() {
+        super.show()
+}
 }

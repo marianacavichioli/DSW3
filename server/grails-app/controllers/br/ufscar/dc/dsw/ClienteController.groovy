@@ -10,4 +10,16 @@ class ClienteController extends RestfulController {
     ClienteController() {
         super(Cliente)
     }
+
+    @Secured(['permitAll()'])
+    @Override
+    def index(Integer max) {
+        super.index(max)
+    }
+
+    @Secured(['permitAll()'])
+    @Override
+    def show() {
+        super.show()
+}
 }
